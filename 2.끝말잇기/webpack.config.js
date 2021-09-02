@@ -1,4 +1,5 @@
 const path = require('path');
+const { webpack } = require('webpack');
 
 module.exports = {
   name: 'wordrelay=setting',
@@ -16,7 +17,16 @@ module.exports = {
       test: /\.jsx?/,
       loader: 'babel-loader',
       options: {
-        presets: ['@babel/preset-env', '@babel/preset-react'],
+        presets: [
+          ['@babel/preset-env', {
+            targets: {
+              browsers: ['> 10% in KR'],
+            },
+            debug: true,
+          }],
+          '@babel/preset-react'
+        ],
+        plugins: [],
       },
     }]
   },
