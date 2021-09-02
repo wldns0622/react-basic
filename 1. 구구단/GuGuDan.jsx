@@ -29,6 +29,7 @@ class GuGuDan extends Component {
         result: '땡!!',
         value: '',
       });
+      this.input.focus();
     }
   }
 
